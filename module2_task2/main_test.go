@@ -31,10 +31,16 @@ func Test_HelloHandler(t *testing.T) {
       body:         "Hello Rosalind Franklin!",
     },
     {
-      name:         "No name",
+      name:         "Empty name",
       queryString:  "name=",
       responseCode: 400,
       body:         "",
+    },
+    {
+      name:         "No name",
+      queryString:  "",
+      responseCode: 200,
+      body:         "Hello there!",
     },
     // INSERT MORE TESTS HERE
   }
