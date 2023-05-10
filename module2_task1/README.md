@@ -13,6 +13,7 @@ A text editor or IDE
 
 ## Lifecycle
 
+lint:   Catch errors without the need to compile or execute the application 
 build:  Compile the source code of the application to a binary
 run:    Run the application in background by executing the binary
 stop:   Stop the application
