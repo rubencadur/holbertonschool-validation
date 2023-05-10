@@ -21,4 +21,4 @@ unit-tests:  ## Run unit tests on web server
 	@go test -v -short -coverprofile=coverage-units.out
 
 help:   ## Show this help usage
-	@cat Makefile | grep "^[A-z\-]*:.*##.*" | sed 's/:.*## /: /'
+	@cat Makefile | grep "^[a-z][a-z\-]*:.*##.*" | sed 's/:.*## /: /'
