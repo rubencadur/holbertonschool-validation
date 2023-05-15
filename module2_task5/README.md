@@ -13,7 +13,7 @@ A text editor or IDE
 
 ## Lifecycle
 
-lint: Catch errors without the need to compile or execute the application
+go-lint: Catch errors without the need to compile or execute the application
 check: Check syntaxis and links
 validate: Validate W3C HTML
 go-build: Compile the source code of the application to a binary
@@ -25,7 +25,7 @@ go-clean: Stop the application. Delete the binary and the log file:
 hugo-clean: Cleanup the content of the directory dist/
 clean: Cleanup project
 post: Create a new blog post whose filename and title come from the environment variables POST_TITLE and POST_NAME
-test: Ensure that it behaves as expected
 unit-tests: Run unit tests on web server
 integration-tests: Run integration tests on web server
+test: Ensure that it behaves as expected
 help: Show this help usage
