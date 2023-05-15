@@ -13,13 +13,19 @@ A text editor or IDE
 
 ## Lifecycle
 
-lint:   Catch errors without the need to compile or execute the application 
-build:  Compile the source code of the application to a binary
-run:    Run the application in background by executing the binary
-stop:   Stop the application
-clean:  Stop the application. Delete the binary and the log file:
-test:   Ensure that it behaves as expected
+lint: Catch errors without the need to compile or execute the application
+check: Check syntaxis and links
+validate: Validate W3C HTML
+go-build: Compile the source code of the application to a binary
+hugo-build: Generate the website from the markdown and configuration files in the directory dist/
+build: Build the project
+run: Run the application in background by executing the binary
+stop: Stop the application
+go-clean: Stop the application. Delete the binary and the log file:
+hugo-clean: Cleanup the content of the directory dist/
+clean: Cleanup project
+post: Create a new blog post whose filename and title come from the environment variables POST_TITLE and POST_NAME
+test: Ensure that it behaves as expected
 unit-tests: Run unit tests on web server
 integration-tests: Run integration tests on web server
-help:   Show this help usage
-
+help: Show this help usage
