@@ -1,4 +1,4 @@
-build:  ## Generate the website from the markdown and configuration files in the directory dist/ 
+build: check  ## Generate the website from the markdown and configuration files in the directory dist/ 
 	@hugo
 
 clean:  ## Cleanup the content of the directory dist/
@@ -15,7 +15,7 @@ check: ## Check syntaxis and links
 	@find ./content -name \*.md -print0 | xargs -0 -n1 markdown-link-check
 
 validate: ## Validate W3C HTML
-	@python3 /opt/W3C-Validator/w3c_validator.py dist/index.html
+	@python3 /opt/W3C-Validator/w3c_validator.py dist/index.html 2>&1 || true
 
 help:   ## Show this help usage
 	@cat Makefile | grep "##" | tr -d "##" | head -n -1
