@@ -1,9 +1,11 @@
-lint:   ## Catch errors without the need to compile or execute the application
+go-lint:   ## Catch errors without the need to compile or execute the application
 	@golangci-lint run
 
 check: ## Check syntaxis and links
 	@find ./content -name \*.md -print0 | xargs -0 -n1 markdownlint
 	@find ./content -name \*.md -print0 | xargs -0 -n1 markdown-link-check
+
+lint: go-lint check validate # Staticly analyse
 
 validate: ## Validate W3C HTML
 	@python3 /opt/W3C-Validator/w3c_validator.py ./dist/index.html 2>&1 || true
@@ -14,10 +16,10 @@ go-build:   ## Compile the source code of the application to a binary
 hugo-build:  ## Generate the website from the markdown and configuration files in the directory dist/ 
 	@hugo
 
-build: go-build hugo-build  ## Build the project
+build: hugo-build go-build  ## Build the project
 
 run: build   ## Run the application in background by executing the binary
-	@./awesome-api >./awesome-api.log 2>&1 &
+	@./awesome-api > ./awesome-api.log 2>&1 &
 
 stop:   ## Stop the application
 	@pkill awesome-api || true
