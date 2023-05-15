@@ -16,7 +16,7 @@ hugo-build: check  ## Generate the website from the markdown and configuration f
 
 build: go-build hugo-build  ## Build the project
 
-run:    ## Run the application in background by executing the binary
+run: build   ## Run the application in background by executing the binary
 	@./awesome-api >./awesome-api.log 2>&1 &
 
 stop:   ## Stop the application
