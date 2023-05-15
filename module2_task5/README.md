@@ -15,6 +15,7 @@ A text editor or IDE
 
 go-lint: Catch errors without the need to compile or execute the application
 check: Check syntaxis and links
+lint: Staticly analyse
 validate: Validate W3C HTML
 go-build: Compile the source code of the application to a binary
 hugo-build: Generate the website from the markdown and configuration files in the directory dist/
