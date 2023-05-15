@@ -38,13 +38,13 @@ post:   ## Create a new blog post whose filename and title come from the environ
 	@sed -i 's/title:.*/title: $(POST_TITLE)/' content/posts/$(POST_NAME).md
 	@sed -i 's/draft:.*/draft: "false"/' content/posts/$(POST_NAME).md
 
-test: unit-tests integration-tests  ## Ensure that it behaves as expected
-
 unit-tests:  ## Run unit tests on web server
 	@go test -v -short -coverprofile=coverage-units.out
 
 integration-tests: ## Run integration tests on web server
 	@go test -v -coverprofile=coverage-integrations.out
+
+test: unit-tests integration-tests  ## Ensure that it behaves as expected
 
 help:   ## Show this help usage
 	@cat Makefile | grep "^[a-z][a-z\-]*:.*##.*" | sed 's/:.*## /: /'
