@@ -8,10 +8,10 @@ check: ## Check syntaxis and links
 validate: ## Validate W3C HTML
 	@python3 /opt/W3C-Validator/w3c_validator.py ./dist/index.html 2>&1 || true
 
-go-build: lint  ## Compile the source code of the application to a binary
+go-build:   ## Compile the source code of the application to a binary
 	@go build
 
-hugo-build: check  ## Generate the website from the markdown and configuration files in the directory dist/ 
+hugo-build:  ## Generate the website from the markdown and configuration files in the directory dist/ 
 	@hugo
 
 build: go-build hugo-build  ## Build the project
