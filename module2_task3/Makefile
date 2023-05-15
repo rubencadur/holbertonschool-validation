@@ -15,7 +15,7 @@ clean: stop ## Stop the application. Delete the binary and the log file:
 	@rm -f coverage-units.out
 	@rm -f coverage-integrations.out
 
-test: unit-tests, integration-tests  ## Ensure that it behaves as expected
+test: unit-tests integration-tests  ## Ensure that it behaves as expected
 
 unit-tests:  ## Run unit tests on web server
 	@go test -v -short -coverprofile=coverage-units.out
