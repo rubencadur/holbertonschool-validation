@@ -5,7 +5,7 @@ check: ## Check syntaxis and links
 	@find ./content -name \*.md -print0 | xargs -0 -n1 markdownlint
 	@find ./content -name \*.md -print0 | xargs -0 -n1 markdown-link-check
 
-lint: go-lint check validate # Staticly analyse
+lint: go-lint check validate  ## Staticly analyse the app source code and markdown files
 
 validate: ## Validate W3C HTML
 	@python3 /opt/W3C-Validator/w3c_validator.py ./dist/index.html 2>&1 || true
