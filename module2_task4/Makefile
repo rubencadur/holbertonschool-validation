@@ -15,7 +15,7 @@ check: ## Check syntaxis and links
 	@find ./content -name \*.md -print0 | xargs -0 -n1 markdown-link-check
 
 validate: ## Validate W3C HTML
-	@python3 /opt/W3C-Validator/w3c_validator.py dist/index.html 2>&1 || true
+	@python3 /opt/W3C-Validator/w3c_validator.py ./dist/index.html 2>&1 || true
 
 help:   ## Show this help usage
 	@cat Makefile | grep "##" | tr -d "##" | head -n -1
