@@ -46,7 +46,7 @@ unit-tests:  ## Run unit tests on web server
 integration-tests: ## Run integration tests on web server
 	@go test -v -coverprofile=coverage-integrations.out
 
-test: unit-tests integration-tests  ## Ensure that it behaves as expected
+test: unit-tests integration-tests validate  ## Ensure that it behaves as expected
 
 help:   ## Show this help usage
 	@cat Makefile | grep "^[a-z][a-z\-]*:.*##.*" | sed 's/:.*## /: /'
